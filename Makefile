@@ -5,7 +5,7 @@ endif
 PKGS=$(shell go list ./... | grep -v /vendor)
 CI_PKGS=$(shell go list ./... | grep -v /vendor | grep -v test)
 FMT_PKGS=$(shell go list -f {{.Dir}} ./... | grep -v vendor | grep -v test | tail -n +2)
-SHELL_IMAGE=golang:1.8.3
+SHELL_IMAGE=golang:1.11
 GIT_SHA=$(shell git rev-parse --verify HEAD)
 VERSION=$(shell cat VERSION)
 PWD=$(shell pwd)
@@ -52,7 +52,7 @@ build-linux-amd64: ## Create the kubicorn executable for Linux 64-bit OS in the 
 	-w /go/src/github.com/kubicorn/kubicorn \
 	-v ${PWD}:/go/src/github.com/kubicorn/kubicorn \
 	-e GOPATH=/go \
-	--rm golang:1.8.1 make docker-build-linux-amd64
+	--rm golang:1.11 make docker-build-linux-amd64
 
 docker-build-linux-amd64:
 	${GOBUILD} -o bin/linux-amd64

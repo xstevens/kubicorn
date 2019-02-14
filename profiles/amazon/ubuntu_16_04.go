@@ -53,7 +53,7 @@ func NewUbuntuCluster(name string) *cluster.Cluster {
 				Name:     fmt.Sprintf("%s.master", name),
 				MaxCount: 1,
 				MinCount: 1,
-				Image:    "ami-79873901",
+				Image:    "ami-08692d171e3cf02d6",
 				Size:     "t2.xlarge",
 				BootstrapScripts: []string{
 					"bootstrap/amazon_k8s_ubuntu_16.04_master.sh",
@@ -132,7 +132,7 @@ func NewUbuntuCluster(name string) *cluster.Cluster {
 				Name:     fmt.Sprintf("%s.node", name),
 				MaxCount: 1,
 				MinCount: 1,
-				Image:    "ami-79873901",
+				Image:    "ami-08692d171e3cf02d6",
 				Size:     "t2.medium",
 				BootstrapScripts: []string{
 					"bootstrap/amazon_k8s_ubuntu_16.04_node.sh",
