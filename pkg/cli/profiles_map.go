@@ -133,6 +133,10 @@ var ProfileMapIndexed = map[string]ProfileMap{
 		ProfileFunc: amazon.NewUbuntuCluster,
 		Description: "Ubuntu on Amazon",
 	},
+	"aws-ubuntu-bionic": {
+		ProfileFunc: amazon.NewUbuntuBionicCluster,
+		Description: "Ubuntu 18.04 LTS on Amazon",
+	},
 	"do-centos": {
 		ProfileFunc: digitalocean.NewCentosCluster,
 		Description: "CentOS on DigitalOcean",
